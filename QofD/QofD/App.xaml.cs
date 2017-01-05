@@ -13,7 +13,7 @@ namespace QofD
         {
             InitializeComponent();
 
-            MainPage = new QofD.MainPage();
+            MainPage = new NavigationPage(new QofD.MainPage());
         }
 
         protected override void OnStart()
