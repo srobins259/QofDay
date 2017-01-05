@@ -38,7 +38,7 @@ namespace QofD
 
         async private void OnButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page1());
+            await Navigation.PushAsync(new Index());
         }
     }
 }
