@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QofD
 {
-    class QuestionItem
+    public class QuestionItem
     {
         public QuestionItem(string question, DateTime created, Boolean searched)
         {

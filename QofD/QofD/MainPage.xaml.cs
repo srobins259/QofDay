@@ -9,8 +9,11 @@ namespace QofD
 {
     public partial class MainPage : ContentPage
     {
+        Editor question = new Editor();
+        List<QuestionItem> master = new List<QuestionItem>();
         public MainPage()
         {
+
             InitializeComponent();
 
             Label greeting = new Label
@@ -18,8 +21,6 @@ namespace QofD
                 Text = "What question would you like to know?",
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
-
-            Editor question = new Editor();
 
             Button toIndex = new Button
             {
@@ -38,7 +39,11 @@ namespace QofD
 
         async private void OnButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Index());
+            DateTime now = DateTime.Now.ToLocalTime();
+            QuestionItem newEntry = new QuestionItem(question.Text, now, false);
+            master.Add(newEntry);
+            QItemSource passable = new QItemSource(master);
+            await Navigation.PushAsync(new Index(newEntry));
         }
     }
 }
