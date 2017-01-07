@@ -45,6 +45,8 @@
       <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QItemSource.cs" />
+    <Compile Include="QuestionItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">

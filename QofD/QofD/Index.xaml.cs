@@ -11,22 +11,6 @@ namespace QofD
     public partial class Index : ContentPage
     {
 
-        class QuestionItem
-        {
-            public QuestionItem(string question, DateTime created, Boolean searched)
-            {
-                this.Question = question;
-                this.Created = created;
-                this.Searched = searched;
-            }
-
-            public string Question { private set; get; }
-
-            public DateTime Created { private set; get; }
-
-            public Boolean Searched { private set; get; }
-        };
-
         public Index()
         {
             InitializeComponent();
@@ -37,6 +21,7 @@ namespace QofD
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
             };
+
 
             List<String> questions = new List<String>();
             questions.Add("How do you eat a porcupine safely?");
