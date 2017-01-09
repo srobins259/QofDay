@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace QofD
 {
-    class QItemSource
+    public class QItemSource
     {
-        public QItemSource(List<QuestionItem> qi)
-        {
-            this.QuestionSource = qi;
-            
-        }
-
-        public List<QuestionItem> QuestionSource { private set; get; }
+        public static List<QuestionItem> master = new List<QuestionItem>();
     };
 }

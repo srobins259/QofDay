@@ -10,12 +10,15 @@ namespace QofD
 {
     public partial class Index : ContentPage
     {
-
+        List<QuestionItem> global = QItemSource.master;
         public Index(QuestionItem qi)
         {
             InitializeComponent();
 
+            
+
             QuestionItem recieved = qi;
+            global.Add(qi);
 
             Label list = new Label
             {
@@ -36,14 +39,15 @@ namespace QofD
                 new QuestionItem("How do you eat a porcupine safely?",new DateTime(2016,8,16,2,3,56),true),
                 new QuestionItem("How many dogs does it take to make a pancake?",new DateTime(2016,12,12,12,35,56),true),
                 new QuestionItem("Is Fiji water really just rich people spit?",new DateTime(2017,1,1,1,1,1),true),
-                new QuestionItem("Are Burt and Ernie from California?",new DateTime(2017,1,6,3,56,56),true),
-                recieved
+                new QuestionItem("Are Burt and Ernie from California?",new DateTime(2017,1,6,3,56,56),true)
             };
+
+            questSource.Add(recieved);
 
             ListView questionView = new ListView
             {
                 SeparatorColor = Color.Gray,
-                ItemsSource = questSource,
+                ItemsSource = global,
                 VerticalOptions = LayoutOptions.Center,
                 ItemTemplate = new DataTemplate(() =>
                 {
