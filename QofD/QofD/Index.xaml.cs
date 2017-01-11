@@ -85,6 +85,8 @@ namespace QofD
             };
             Content = new StackLayout
             {
+				Padding = Device.OnPlatform(new Thickness(0, 15, 0, 0), new Thickness(0), new Thickness(0)),
+
                 Children =
                 {
                     list, questionView
